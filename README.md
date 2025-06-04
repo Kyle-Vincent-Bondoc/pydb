@@ -15,3 +15,9 @@ or
 ```bash
 pip install -e .
 ```
+
+---
+
+# Extra Notes
+
+This is still a small version and some functions aren't tested.
