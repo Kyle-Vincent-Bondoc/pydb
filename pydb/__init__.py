@@ -89,3 +89,5 @@ class Database:
         length = len(self.contents)
         entries = "\n".join(f"{i}. {entry}" for i, entry in enumerate(self.contents))
         return f"The database is {length} long.\nContents:\n{entries}"
+
+sys.path.append("C:/Users/GOD IS LOVE/Documents/Calvin files/Projects/pydb/pydb")
