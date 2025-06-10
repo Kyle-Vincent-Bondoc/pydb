@@ -22,7 +22,7 @@ class Database:
         for itemname, *args in items:
             self.add(itemname, *args)
 
-    def remove(self, no):
+    def delete(self, no):
         if 0 <= no < len(self.contents):
             removed = self.contents.pop(no)
             print(f"Removed entry at index {no}: {removed}")
@@ -91,4 +91,41 @@ class Database:
         entries = "\n".join(f"{i}. {entry}" for i, entry in enumerate(self.contents))
         return f"The database is {length} long.\nContents:\n{entries}"
 
-sys.path.append("C:/Users/GOD IS LOVE/Documents/Calvin files/Projects/pydb/pydb")
+class DataGroup:
+    def __init__(self):
+        self.items = []
+
+    def add(self, item):
+        if isinstance(item, Database):
+            self.items.append(item)
+            return f'Added Database {item} to this Datagroup'
+
+    def subtract(self, name):
+        for db in self.items:
+            if db == name:
+                self.items.remove(db)
+                print(f'Removed {db} Database from this Datagroup')
+                return
+        else:
+            print("Database {name} was not found")
+
+        def select(self, database, *args):
+        if database not in self.items:
+            print("Database not found in this DataGroup.")
+            return []
+
+        result = []
+
+        if "*" in args:
+            for entry in database.contents:
+                result.append(entry.copy())
+        else:
+            for entry in database.contents:
+                filtered = {k: entry.get(k, None) for k in args if k == "name" or k in database.keys}
+                result.append(filtered)
+
+        return result
+
+    
+
+sys.path.append(os.path)
