@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="pydb",
-    version="0.3",
+    version="0.4",
     packages=find_packages(),
     description="Database module",
     author="Kyle-Vincent-Bondoc",
