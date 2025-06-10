@@ -109,7 +109,7 @@ class DataGroup:
         else:
             print("Database {name} was not found")
 
-        def select(self, database, *args):
+    def select(self, database, *args):
         if database not in self.items:
             print("Database not found in this DataGroup.")
             return []
